@@ -12,6 +12,9 @@
 		06294FAE4BDE999D359349D04FFE74E4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89BF7315BAB3516AF2A51041DC39C3B /* XCTest.framework */; };
 		0B8A6CE76C33CCFA4089BEC310A077B4 /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A3FFEFA87108503C1154659236D755 /* ExampleHooks.swift */; };
 		112614F21939902B59102E6E876ADCBC /* RaisesException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A414C35360A25163AA8D7D17AB68C77 /* RaisesException.swift */; };
+		115435541D5EEF43004C4D9D /* Styleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115435531D5EEF43004C4D9D /* Styleable.swift */; };
+		115435561D5EEF4D004C4D9D /* StyleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115435551D5EEF4D004C4D9D /* StyleType.swift */; };
+		115435581D5EF024004C4D9D /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115435571D5EF024004C4D9D /* Debug.swift */; };
 		131D49937A7B86A387E9116716D1C2FF /* World+DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299FCFFDCC88E9151397B8D50F79E36E /* World+DSL.swift */; };
 		134D462C5527962618D58EBDA133DD22 /* World.h in Headers */ = {isa = PBXBuildFile; fileRef = B973D705E425F6A8CF2906380774F7EC /* World.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		135B6326D35C977854AA0C12B3F6CB7D /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E4E84747227302312F1E22D114789 /* DSL.swift */; };
@@ -137,6 +140,9 @@
 		06574F8F4E49EA0549CA6CBFA185678E /* Pods_FreestylerCore_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreestylerCore_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CFF847D8C75EDD1CE2BA21A60D08E00 /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
 		0F2748FABD1661E3A75F8B07E115CF96 /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
+		115435531D5EEF43004C4D9D /* Styleable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styleable.swift; sourceTree = "<group>"; };
+		115435551D5EEF4D004C4D9D /* StyleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleType.swift; sourceTree = "<group>"; };
+		115435571D5EF024004C4D9D /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		12FD8C45CF9591F32C21657E578112C9 /* Quick-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-prefix.pch"; sourceTree = "<group>"; };
 		14E1DC94DD47A6F91084F3EAA92AF552 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Quick.modulemap; sourceTree = "<group>"; };
 		18D110A87EF135293B27C04BD720A8E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -458,6 +464,9 @@
 			isa = PBXGroup;
 			children = (
 				1D17FB7EE469FB59E081D7FED8491F58 /* Style.swift */,
+				115435571D5EF024004C4D9D /* Debug.swift */,
+				115435531D5EEF43004C4D9D /* Styleable.swift */,
+				115435551D5EEF4D004C4D9D /* StyleType.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -803,7 +812,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE3983FCAAE86F178002D465C7AC9D0F /* FreestylerCore-dummy.m in Sources */,
+				115435581D5EF024004C4D9D /* Debug.swift in Sources */,
+				115435561D5EEF4D004C4D9D /* StyleType.swift in Sources */,
 				8AC51B6ED1D93A3E5F973A5CC1BFB3BE /* Style.swift in Sources */,
+				115435541D5EEF43004C4D9D /* Styleable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

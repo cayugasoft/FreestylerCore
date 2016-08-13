@@ -1,86 +1,12 @@
-//: Playground - noun: a place where people can play
-
 import UIKit
 
 
-enum StyleDebugBehavior {
-    case Warning
-    case Crash
-    case Ignore
-}
-
-enum StyleError: ErrorType, CustomStringConvertible {
-    case WrongType(expected: Any.Type, actual: Any.Type)
-    case NotRespondingToSelector(selector: Selector)
-    
-    var description: String {
-        switch self {
-        case .WrongType(let expected, let actual):
-            return "Expected to get Styleable of type \(expected) but actually get \(actual)."
-        case .NotRespondingToSelector(let selector):
-            return "Expected Styleable to respond to selector \(selector)."
-        }        
-    }
-}
-
-var debugBehavior = StyleDebugBehavior.Crash
-
-
-public protocol Styleable {}
-
-public typealias StyleClosure = (Styleable) throws -> Void
-
-extension UIView: Styleable {}
-extension UIBarItem: Styleable {}
-
-
-public func typeChecker<X: Styleable>(styleable: Styleable) throws -> X {
-    guard let x = styleable as? X else {
-        throw StyleError.WrongType(expected: X.self, actual: styleable.dynamicType)
-    }
-    return x
-}
-
-public protocol StyleType {
-    init(name: String?, closures: [StyleClosure])
-    var closures: [StyleClosure] { get }
-    var name: String { get }
-}
-
-
-extension StyleType {
-    func applyTo(styleable: Styleable) -> Styleable {
-        for (index, closure) in closures.enumerate() {
-            do {
-                try closure(styleable)
-            } catch {
-                let messages = [
-                    "😡 Error happened while trying to apply style \(self) to Styleable \(styleable).",
-                    "Error in closure with index \(index).",
-                    "\(error)"
-                ]
-                switch debugBehavior {
-                case .Ignore: continue
-                case .Warning: messages.forEach { print($0) }
-                case .Crash: fatalError("\n" + messages.joinWithSeparator("\n") + "\n")
-                }
-            }
-        }
-        return styleable
-    }
-    
-    static func combineStyles<X: StyleType>(style1: X, _ style2: X) -> X {
-        let finalName = [style1.name, style2.name].joinWithSeparator(" + ")
-        return X(name: finalName, closures: style1.closures + style2.closures)
-    }
-}
-
-
-
-/** Defines style for given `UIView` subclass. Style is made of 1 or several closures (see initializers), or from several other styles for this subclass. You can apply style to view using `applyTo(_:)` method or operator `<~`. */
+/** Defines style for given `UIView` subclass. Style is made of 1 or several closures (see initializers), or from several other styles for this subclass. You can apply style to view using `applyTo(_:)` method or operator `<~`. You can combine styles using `combineStyles(_:_:)` method or operator `+`. */
 public class Style: StyleType, ArrayLiteralConvertible, CustomStringConvertible {
     /// Array of closures for this style.
     public let closures: [StyleClosure]
+    
+    /// Name of style. Useful for debugging.
     public var name: String
     
     public required init(name: String? = nil, closures: [StyleClosure]) {
@@ -107,12 +33,14 @@ public class Style: StyleType, ArrayLiteralConvertible, CustomStringConvertible 
 }
 
 infix operator <~ { associativity left precedence 100 }
+/// The same as `applyTo` method.
 public func <~ <V: Styleable> (left: V, right: StyleType) -> V {
     right.applyTo(left)
     return left
 }
 
 infix operator + { associativity left precedence 140 }
+/// The same as `combineStyles` method.
 public func + <X: StyleType> (left: X, right: X) -> X {
     return X.combineStyles(left, right)
 }
