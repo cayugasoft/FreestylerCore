@@ -1,0 +1,6 @@
+framework module Pods_FreestylerCore_Example {
+  umbrella header "Pods-FreestylerCore_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
