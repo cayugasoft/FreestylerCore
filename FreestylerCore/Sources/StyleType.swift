@@ -6,7 +6,7 @@ public typealias StyleClosure = (Styleable) throws -> Void
 
 /** This protocol takes heavy load from `Style` class. Style can have name (useful for debugging), and array of closures which do actual work. */
 public protocol StyleType {
-    init(name: String?, closures: [StyleClosure])
+    init(_ name: String?, styleClosures: [StyleClosure])
     var closures: [StyleClosure] { get }
     var name: String { get }
 }
@@ -37,6 +37,6 @@ extension StyleType {
     /// Combines styles into 1 by merging arrays of closures. Order of closures is preserved.
     static func combineStyles<X: StyleType>(style1: X, _ style2: X) -> X {
         let finalName = [style1.name, style2.name].joinWithSeparator(" + ")
-        return X(name: finalName, closures: style1.closures + style2.closures)
+        return X(finalName, styleClosures: style1.closures + style2.closures)
     }
 }

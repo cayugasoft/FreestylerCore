@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		29E6ACA8A03B611347809FC3 /* Pods_FreestylerCore_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreestylerCore_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3408994315586CF4C23F5A0C /* FreestylerCore.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FreestylerCore.podspec; path = ../FreestylerCore.podspec; sourceTree = "<group>"; };
+		3408994315586CF4C23F5A0C /* FreestylerCore.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FreestylerCore.podspec; path = ../FreestylerCore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* FreestylerCore_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreestylerCore_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };

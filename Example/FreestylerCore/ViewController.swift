@@ -11,13 +11,26 @@ import FreestylerCore
 
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var button: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view <~ Style() {
-            ($0 as! UIView).backgroundColor = .redColor()
+        let roundCornersStyle = Style("Round corners") {
+            (view: UIView) in
+            view.layer.cornerRadius = 5.0
         }
+        
+        let redBackgroundStyle = Style {
+            (view: UIView) in
+            view.backgroundColor = .redColor()
+        }
+        
+        button <~ roundCornersStyle + redBackgroundStyle
+        
+        
+//        let redBackgroundStyle = Style(
     }
 }
 

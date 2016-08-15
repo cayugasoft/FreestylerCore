@@ -9,28 +9,48 @@ public class Style: StyleType, ArrayLiteralConvertible, CustomStringConvertible 
     /// Name of style. Useful for debugging.
     public var name: String
     
-    public required init(name: String? = nil, closures: [StyleClosure]) {
-        self.closures = closures
+    public required init(_ name: String? = nil, styleClosures: [StyleClosure]) {
+        self.closures = styleClosures
         self.name = ""
         self.name = name ?? "<<Anonymous style: \(unsafeAddressOf(self))>>"
     }
     
-    public convenience init(_ name: String? = nil, _ closure: StyleClosure) {
-        self.init(name: name, closures: [closure])
+    public convenience init(_ name: String? = nil, styleClosure: StyleClosure) {
+        self.init(name, styleClosures: [styleClosure])
     }
+    
+    public convenience init<S: Styleable>(_ name: String? = nil, closures: [(S) -> Void]) {
+        self.init(name, styleClosures: closures.map(castClosure))
+    }
+    
+    public convenience init<S: Styleable>(_ name: String? = nil, closure: (S) -> Void) {
+        self.init(name, styleClosure: castClosure(closure))
+    }
+    
+
     
     public required convenience init(arrayLiteral elements: StyleType...) {
         let allClosures: [StyleClosure] = elements.reduce([]) { accumulator, style in
             accumulator + style.closures
         }
         let finalName = elements.map { $0.name }.joinWithSeparator(" + ")
-        self.init(name: finalName, closures: allClosures)
+        self.init(finalName, styleClosures: allClosures)
     }
     
     public var description: String {
         return "\"\(name)\""
     }
 }
+
+
+private func castClosure<S: Styleable>(closure: (S) -> Void) -> StyleClosure {
+    return {
+        (styleable: Styleable) in
+        let s: S = try typeChecker(styleable)
+        closure(s)
+    }
+}
+
 
 infix operator <~ { associativity left precedence 100 }
 /// The same as `applyTo` method.
@@ -44,3 +64,5 @@ infix operator + { associativity left precedence 140 }
 public func + <X: StyleType> (left: X, right: X) -> X {
     return X.combineStyles(left, right)
 }
+
+
