@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FreestylerCore'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'FreestylerCore lets you create and reuse styles using lightweight syntax.'
 
   s.description      = <<-DESC

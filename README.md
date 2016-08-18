@@ -18,14 +18,14 @@ The simplest way to explain it is an example:
 // However, it almost always makes sense to use explicit type,
 // because it ensures that this style cannot be applied to wrong type.
 let roundCornersStyle = Style("Round corners") {
-(view: UIView) in
-view.layer.cornerRadius = 5.0
+    (view: UIView) in
+    view.layer.cornerRadius = 5.0
 }
 
 // Style without a name.
 let redBackgroundStyle = Style {
-(view: UIView) in
-view.backgroundColor = .redColor()
+    (view: UIView) in
+    view.backgroundColor = .redColor()
 }
 
 let button = UIButton()
