@@ -17,20 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let roundCornersStyle = Style("Round corners") {
-            (view: UIView) in
-            view.layer.cornerRadius = 5.0
-        }
         
-        let redBackgroundStyle = Style {
-            (view: UIView) in
-            view.backgroundColor = .redColor()
-        }
-        
-        button <~ roundCornersStyle + redBackgroundStyle
-        
-        
-//        let redBackgroundStyle = Style(
     }
 }
+
 

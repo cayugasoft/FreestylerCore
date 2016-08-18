@@ -6,7 +6,7 @@ public class Style: StyleType, ArrayLiteralConvertible, CustomStringConvertible 
     /// Array of closures for this style.
     public let closures: [StyleClosure]
     
-    /// Name of style. Useful for debugging.
+    /// Name of style (i.e. "Rounded corners"). Useful for debugging.
     public var name: String
     
     public required init(_ name: String? = nil, styleClosures: [StyleClosure]) {
@@ -26,8 +26,6 @@ public class Style: StyleType, ArrayLiteralConvertible, CustomStringConvertible 
     public convenience init<S: Styleable>(_ name: String? = nil, closure: (S) -> Void) {
         self.init(name, styleClosure: castClosure(closure))
     }
-    
-
     
     public required convenience init(arrayLiteral elements: StyleType...) {
         let allClosures: [StyleClosure] = elements.reduce([]) { accumulator, style in
