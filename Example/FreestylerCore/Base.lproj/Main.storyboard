@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Freestyler Example-->
@@ -17,58 +18,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHF-Dt-8KT">
-                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
-                                <items>
-                                    <barButtonItem title="Some button" id="PiK-xE-Nbp"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9Vh-yx-EN6"/>
-                                    <barButtonItem title="Some other button" id="Usx-gt-ym9"/>
-                                </items>
-                            </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Some label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7N-Gy-Lxx">
-                                <rect key="frame" x="20" y="90" width="85" height="21"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tql-3h-hlM">
+                                <rect key="frame" x="148" y="72" width="118" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueE-0C-oPu">
+                                        <rect key="frame" x="3" y="0.0" width="113" height="30"/>
+                                        <state key="normal" title="Red background"/>
+                                        <connections>
+                                            <action selector="applyStyle:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tQ0-dV-z0f"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhx-KR-MFs">
+                                        <rect key="frame" x="4" y="30" width="110" height="30"/>
+                                        <state key="normal" title="Green text color"/>
+                                        <connections>
+                                            <action selector="applyStyle:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Soy-dm-fnT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCP-I9-5Wz">
+                                        <rect key="frame" x="0.0" y="60" width="118" height="30"/>
+                                        <state key="normal" title="Rounded corners"/>
+                                        <connections>
+                                            <action selector="applyStyle:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6EB-AK-lrC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4J-rQ-3Y1">
+                                        <rect key="frame" x="32" y="90" width="55" height="30"/>
+                                        <state key="normal" title="Shadow"/>
+                                        <connections>
+                                            <action selector="applyStyle:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IHu-ot-eO1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrR-6c-MF0">
+                                        <rect key="frame" x="0.0" y="120" width="118" height="30"/>
+                                        <state key="normal" title="Center alignment"/>
+                                        <connections>
+                                            <action selector="applyStyle:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4Gd-qk-jha"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm label. Press on buttons above and make me stylish!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWk-n0-LeK">
+                                <rect key="frame" x="20" y="340" width="374" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="Trf-3e-pdV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LFy-YW-daE">
-                                <rect key="frame" x="20" y="119" width="374" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spS-kU-LSt">
-                                <rect key="frame" x="165" y="579" width="84" height="30"/>
-                                <state key="normal" title="Apply styles"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5s9-k7-LZZ">
-                                <rect key="frame" x="171" y="648" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rgz-z8-jYC">
-                                <rect key="frame" x="20" y="255" width="121" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="pHF-Dt-8KT" secondAttribute="trailing" id="BHO-Es-EP6"/>
-                            <constraint firstItem="pHF-Dt-8KT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="JWe-Gd-8To"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="pHF-Dt-8KT" secondAttribute="bottom" id="c2T-bw-wCc"/>
+                            <constraint firstItem="Tql-3h-hlM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="0b6-XJ-xPy"/>
+                            <constraint firstItem="jWk-n0-LeK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="IcF-Vu-hug"/>
+                            <constraint firstItem="jWk-n0-LeK" firstAttribute="top" secondItem="Tql-3h-hlM" secondAttribute="bottom" constant="118" id="YbT-wl-p11"/>
+                            <constraint firstItem="jWk-n0-LeK" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="hAm-MC-Vqu"/>
+                            <constraint firstItem="Tql-3h-hlM" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="pp0-re-shc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Freestyler Example" id="HhQ-8G-yln">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VqU-aR-hxx"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Freestyler Example" id="HhQ-8G-yln"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="button" destination="spS-kU-LSt" id="uA9-BO-f7M"/>
+                        <outlet property="label" destination="jWk-n0-LeK" id="fbF-M8-Oid"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

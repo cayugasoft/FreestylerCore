@@ -12,12 +12,16 @@ import FreestylerCore
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        label.clipsToBounds = true
+    }
+    
+    @IBAction func applyStyle(styleButton: UIButton) {
+        let style = allStyles[styleButton.tag]
+        label <~ style
     }
 }
 
