@@ -1,5 +1,10 @@
 # FreestylerCore
 
+![Logo](https://raw.githubusercontent.com/Cayugasoft/FreestylerCore/master/FreestylerLogo.png)
+
+---
+
+
 [![Version](https://img.shields.io/cocoapods/v/FreestylerCore.svg?style=flat)](http://cocoapods.org/pods/FreestylerCore)
 [![License](https://img.shields.io/cocoapods/l/FreestylerCore.svg?style=flat)](http://cocoapods.org/pods/FreestylerCore)
 [![Platform](https://img.shields.io/cocoapods/p/FreestylerCore.svg?style=flat)](http://cocoapods.org/pods/FreestylerCore)
