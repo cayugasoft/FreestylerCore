@@ -41,23 +41,23 @@
 		11436C471DBEB9F000E1EDB7 = {
 			isa = PBXGroup;
 			children = (
-				11436C651DBEBADD00E1EDB7 /* Playground.playground */,
-				11436C4E1DBEBA3000E1EDB7 /* Source */,
 				11436C5A1DBEBA9500E1EDB7 /* FreestylerCore_iOS */,
 				11436C591DBEBA9500E1EDB7 /* Products */,
+				11436C4E1DBEBA3000E1EDB7 /* Source */,
+				11436C651DBEBADD00E1EDB7 /* Playground.playground */,
 			);
 			sourceTree = "<group>";
 		};
 		11436C4E1DBEBA3000E1EDB7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				11436C661DBEDA8700E1EDB7 /* Array+Style.swift */,
 				11436C4F1DBEBA5600E1EDB7 /* Debug.swift */,
 				11436C501DBEBA5600E1EDB7 /* Style.swift */,
-				11436C661DBEDA8700E1EDB7 /* Array+Style.swift */,
-				11436C511DBEBA5600E1EDB7 /* Styleable.swift */,
 				11436C521DBEBA5600E1EDB7 /* StyleType.swift */,
+				11436C511DBEBA5600E1EDB7 /* Styleable.swift */,
 			);
-			name = Source;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		11436C591DBEBA9500E1EDB7 /* Products */ = {
@@ -324,6 +324,7 @@
 				11436C601DBEBA9500E1EDB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
