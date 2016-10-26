@@ -12,7 +12,14 @@ public class Style: StyleType, ExpressibleByArrayLiteral, CustomStringConvertibl
     public required init(_ name: String? = nil, styleClosures: [StyleClosure]) {
         self.closures = styleClosures
         self.name = ""
-        self.name = name ?? "<<Anonymous style: \(Unmanaged.passUnretained(self))>>"
+        if let name = name {
+            self.name = name
+        } else {
+            let closuresCount = styleClosures.count
+            let closuresTitle = closuresCount == 1 ? "closure" : "closures"
+            self.name = "<<Anonymous style (\(closuresCount) \(closuresTitle)): \(Unmanaged.passUnretained(self).toOpaque())>>"
+        }
+        
     }
     
     public convenience init(_ name: String? = nil, styleClosure: @escaping StyleClosure) {
