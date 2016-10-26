@@ -12,6 +12,7 @@
 		11436C621DBEBAC800E1EDB7 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11436C501DBEBA5600E1EDB7 /* Style.swift */; };
 		11436C631DBEBAC800E1EDB7 /* Styleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11436C511DBEBA5600E1EDB7 /* Styleable.swift */; };
 		11436C641DBEBAC800E1EDB7 /* StyleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11436C521DBEBA5600E1EDB7 /* StyleType.swift */; };
+		11436C671DBEDA8700E1EDB7 /* Array+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11436C661DBEDA8700E1EDB7 /* Array+Style.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		11436C5B1DBEBA9500E1EDB7 /* FreestylerCore_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreestylerCore_iOS.h; sourceTree = "<group>"; };
 		11436C5C1DBEBA9500E1EDB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11436C651DBEBADD00E1EDB7 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
+		11436C661DBEDA8700E1EDB7 /* Array+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Style.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			children = (
 				11436C4F1DBEBA5600E1EDB7 /* Debug.swift */,
 				11436C501DBEBA5600E1EDB7 /* Style.swift */,
+				11436C661DBEDA8700E1EDB7 /* Array+Style.swift */,
 				11436C511DBEBA5600E1EDB7 /* Styleable.swift */,
 				11436C521DBEBA5600E1EDB7 /* StyleType.swift */,
 			);
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11436C611DBEBAC800E1EDB7 /* Debug.swift in Sources */,
+				11436C671DBEDA8700E1EDB7 /* Array+Style.swift in Sources */,
 				11436C641DBEBAC800E1EDB7 /* StyleType.swift in Sources */,
 				11436C621DBEBAC800E1EDB7 /* Style.swift in Sources */,
 				11436C631DBEBAC800E1EDB7 /* Styleable.swift in Sources */,

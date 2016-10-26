@@ -74,15 +74,25 @@ public func <~ <V: Styleable> (left: V, right: StyleType) -> V {
     return left
 }
 
-precedencegroup StyleAdditionPrecedence {
-    associativity: left
-    higherThan: StyleApplicationPrecedence
-}
-
-infix operator + : StyleAdditionPrecedence
-/// The same as `combineStyles` method.
-public func + <X: StyleType> (left: X, right: X) -> X {
+public func <~ <X: StyleType> (left: X, right: X) -> X {
     return X.combineStyles(left, right)
 }
 
+//precedencegroup StyleAdditionPrecedence {
+//    associativity: right
+//    higherThan:  //StyleMultipleApplicationPrecedence
+//}
+
+//infix operator + : StyleAdditionPrecedence
+///// The same as `combineStyles` method.
+//public func + <X: StyleType> (left: X, right: X) -> X {
+//    return X.combineStyles(left, right)
+//}
+
+
+//infix operator +++ : StyleAdditionPrecedence
+///// The same as `combineStyles` method.
+//public func +++ <X: StyleType> (left: X, right: X) -> X {
+//    return X.combineStyles(left, right)
+//}
 
