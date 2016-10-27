@@ -32,3 +32,4 @@ view.backgroundColor
 v2.backgroundColor
 
 var str = "Hello, playground"
+

@@ -19,21 +19,23 @@
 // THE SOFTWARE.
 
 
-/** Defines what will happen if you apply style to the wrong object (for instance, style that changes text color of `UILabel` to `UISegmentedControl`).
- - `.warning`: program will output error message if something is wrong, but continue execution then.
- - `.crash`: program will output error message and crash.
- - `.ignore`: program will silently ignore all errors.
- 
-    
-You can change this behavior using `debugBehavior` variable. By default it's `.Crash`.
-*/
+/** Defines what will happen if you apply style to the wrong object (for example, applying style that changes text color of `UILabel` to `UISegmentedControl` instance).
+You can change this behavior using static variable `behavior`. By default it's `.crash`. */
 public enum StyleDebugBehavior {
-    case warning
+    /// Will output error message and crash. It's default behavior.
     case crash
+    
+    /// Will output error message if something is wrong, but continue execution then.
+    case warning
+    
+    /// Will silently ignore all errors (not recommended).
     case ignore
+    
+    /// Defines what will happen if you apply style to the wrong object.
+    public static var behavior = StyleDebugBehavior.crash
 }
 
-/** Default type for errors which thrown while applying style. Try to use them in your own styles. */
+/** Default type for errors which can be thrown while applying style. Try to use them in your own styles. */
 public enum StyleError: Error, CustomStringConvertible {
     /// `Styleable` has unexpected type.
     case wrongType(expected: Any.Type, actual: Any.Type)
@@ -50,6 +52,3 @@ public enum StyleError: Error, CustomStringConvertible {
         }
     }
 }
-
-/// See `StyleDebugBehavior`. Default is `.crash`.
-public var debugBehavior = StyleDebugBehavior.crash

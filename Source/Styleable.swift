@@ -25,6 +25,8 @@ public protocol Styleable {}
 import UIKit
 extension UIView: Styleable {}
 extension UIBarItem: Styleable {}
+#elseif os(watchOS)
+import WatchKit
 #elseif os(macOS)
 import AppKit
 extension NSView: Styleable {}
