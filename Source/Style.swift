@@ -1,4 +1,6 @@
-// Copyright (c) 2016 Alexander Doloz <adoloz@cayugasoft.com>
+// The MIT License (MIT)
+// 
+// Copyright (c) Copyright © 2016 Cayugasoft Technologies
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -17,7 +19,6 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
 
 /** Defines style for given `UIView` subclass. Style is made of 1 or several closures (see initializers), or from several other styles for this subclass. You can apply style to view using `applyTo(_:)` method or operator `<~`. You can combine styles using `combineStyles(_:_:)` method or operator `+`. */
 public class Style: StyleType, ExpressibleByArrayLiteral, CustomStringConvertible {

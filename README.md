@@ -115,4 +115,4 @@ Alexander Doloz, [adoloz@cayugasoft.com](mailto:adoloz@cayugasoft.com)
 
 ## License
 
-FreestylerCore is available under the MIT license. See the LICENSE file for more info.
+*FreestylerCore* is available under the MIT license. See the *Podspec/LICENSE.txt* file for more info.
