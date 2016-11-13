@@ -59,6 +59,14 @@ public extension StyleType {
     }
 }
 
+public extension Styleable {
+    /// Applies style to given styleable and returns this styleable
+    @discardableResult public func apply<S: StyleType>(style: S) -> Self {
+        style.apply(to: self)
+        return self
+    }
+}
+
 public extension Array where Element: Styleable {
     /// Applies style to array of styleables one by one.
     @discardableResult public func apply<S: StyleType>(style: S) -> [Element] {
