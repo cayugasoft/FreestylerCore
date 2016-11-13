@@ -105,9 +105,9 @@ button.apply(style: style)
 ```
 
 ## Goals
-
-* Add support for other platforms, especially for macOS
-* Add support for [Swift Package Manager](https://swift.org/package-manager/)
+* Add unit tests to all operators and methods.
+* Add support for other platforms, especially for macOS.
+* Add support for [Swift Package Manager](https://swift.org/package-manager/).
 
 ## Author
 
