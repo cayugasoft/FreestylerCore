@@ -18,20 +18,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-
-public func <~ <V: Styleable> (left: [V], right: StyleType) -> [V] {
-    left.forEach { right.apply(to: $0) }
-    return left
-}
-
-
-public func <~ <V: Styleable> (left: V, right: [StyleType]) -> V {
-    right.forEach { $0.apply(to: left) }
-    return left
-}
-
-
-public func <~ <V: Styleable> (left: [V], right: [StyleType]) -> [V] {
-    left.forEach { styleable in right.forEach { style in style.apply(to: styleable) } }
-    return left
+/** Default type for errors which can be thrown while applying style. Try to use them in your own styles. */
+public enum StyleError: Error, CustomStringConvertible {
+    /// `Styleable` has unexpected type.
+    case wrongType(expected: Any.Type, actual: Any.Type)
+    
+    /// `Styleable` not responding to selector to which is expected to respond.
+    case notRespondingToSelector(selector: Selector)
+    
+    public var description: String {
+        switch self {
+        case .wrongType(let expected, let actual):
+            return "Expected to get Styleable of type \(expected) but actually get \(actual)."
+        case .notRespondingToSelector(let selector):
+            return "Expected Styleable to respond to selector \(selector)."
+        }
+    }
 }

@@ -69,17 +69,17 @@ public class Style: StyleType, ExpressibleByArrayLiteral, CustomStringConvertibl
  
 ```let label: UILabel = try typeChecker($0)```
 */
-private func typeChecker<X: Styleable>(styleable: Styleable) throws -> X {
-    guard let x = styleable as? X else {
-        throw StyleError.wrongType(expected: X.self, actual: type(of: styleable))
+private func typeChecker<V: Styleable>(styleable: Styleable) throws -> V {
+    guard let x = styleable as? V else {
+        throw StyleError.wrongType(expected: V.self, actual: type(of: styleable))
     }
     return x
 }
 
-private func cast<S: Styleable>(closure: @escaping (S) -> Void) -> StyleClosure {
+private func cast<V: Styleable>(closure: @escaping (V) -> Void) -> StyleClosure {
     return {
         (styleable: Styleable) in
-        let s: S = try typeChecker(styleable: styleable)
+        let s: V = try typeChecker(styleable: styleable)
         closure(s)
     }
 }
