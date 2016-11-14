@@ -1,12 +1,12 @@
 # FreestylerCore
 
----
-
-[![Version](https://img.shields.io/cocoapods/v/FreestylerCore.svg?style=flat)](http://cocoapods.org/pods/FreestylerCore)
-[![License](https://img.shields.io/cocoapods/l/FreestylerCore.svg?style=flat)](http://cocoapods.org/pods/FreestylerCore)
-[![Platform](https://img.shields.io/cocoapods/p/FreestylerCore.svg?style=flat)](http://cocoapods.org/pods/FreestylerCore)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CAYUGAsoft](https://rawgithub.com/cayugasoft/Resources/master/Badges_by_Cayuga/by_Cayuga.svg)](http://cayugasoft.com/?utm_source=github)
+<p align="center">
+<a href="http://cocoapods.org/pods/FreestylerCore"><img src="https://img.shields.io/cocoapods/v/FreestylerCore.svg?style=flat"></a>
+<a href="http://cocoapods.org/pods/FreestylerCore"><img src="https://img.shields.io/cocoapods/l/FreestylerCore.svg?style=flat"></a>
+<a href="http://cocoapods.org/pods/FreestylerCore"><img src="https://img.shields.io/cocoapods/p/FreestylerCore.svg?style=flat"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
+<a href="http://cayugasoft.com/?utm_source=github"><img src="https://rawgithub.com/cayugasoft/Resources/master/Badges_by_Cayuga/by_Cayuga.svg"></a>
+</p>
 
 
 ## What is it?
